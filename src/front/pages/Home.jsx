@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { Link } from "react-router-dom"; 
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
@@ -25,7 +26,6 @@ export const Home = () => {
 				Please check if the backend is running and the backend port is public.`
 			);
 		}
-
 	}
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
+			<h1 className="display-4">JWT exercise!!</h1>
 			<p className="lead">
 				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
 			</p>
@@ -47,6 +47,15 @@ export const Home = () => {
 					</span>
 				)}
 			</div>
+
+			<div className="mt-4 d-flex justify-content-center gap-3">
+				<Link to="/signup">
+					<button className="btn btn-success">Sign Up</button>
+				</Link>
+				<Link to="/login">
+					<button className="btn btn-primary">Log In</button>
+				</Link>
+			</div>
 		</div>
 	);
-}; 
+};
